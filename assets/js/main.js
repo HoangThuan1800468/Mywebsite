@@ -111,6 +111,23 @@ function scrollActive(){
     })
 }
 window.addEventListener('scroll', scrollActive)
+/*==================== Qualification ====================*/
+const tabs = document.querySelectorAll('[data-target]'),
+      tabContents = document.querySelectorAll('[data-content]')
+
+      tabs.forEach(tab =>{
+        tab.addEventListener('click',()=>{
+            const target = document.querySelector(tab.dataset.target)
+            tabContents.forEach(tabContent =>{
+                tabContent.classList.remove('qualification__active')
+            })
+            target.classList.add('qualification__active')
+            tabs.forEach(tab =>{
+                tab.classList.remove('qualification__active')
+            })
+            tab.classList.add('qualification__active')
+        })
+      })
 
 /*==================== SCROLL REVEAL ANIMATION ====================*/
 const sr = ScrollReveal({
@@ -123,8 +140,9 @@ const sr = ScrollReveal({
 sr.reveal(`.home__data, .home__social-link, .home__info,
            .discover__container,
            .experience__data, .experience__overlay,
-           .place__card,
-           .sponsor__content,
+           .place__card,.qualification__data,
+           .sponsor__content,.qualification__tabs,.sections__title,
+           .sections__subtitle,
            .footer__data, .footer__rights`,{
     origin: 'top',
     interval: 100,
