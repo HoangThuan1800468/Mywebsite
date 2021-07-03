@@ -351,8 +351,8 @@ input {
   position: absolute;
   right: 0;
   bottom: 1rem;
-  max-height: 200px;
-  max-width: 200px;
+  height: 200px;
+  width: 200px;
 }
 
 .home__info-title {
